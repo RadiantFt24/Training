@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KomputerTech.Id</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+        }
+        header {
+         position: fixed;
+         top: 0;
+         left: 0;
+         right: 0;
+         background-color: white;
+         border-bottom: 1px solid #e0e0e0;
+         padding: 20px 50px;  
+         display: flex;
+         flex-direction: row; 
+         align-items: center;  
+         justify-content: space-between;
+         height: 8px;
+         transition: top 0.3s;
+         z-index: 1000;
+        }
+
+        .logo {
+         font-size: 30px;
+         font-weight: 700;
+         color: #d61375;
+         margin-top: 10px;
+        }
+        .nav {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+        }
+        .nav a:hover {
+            color: #ff3399;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .search-bar input {
+            width: 200px;
+            padding: 5px 10px;
+            font-size: 14px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        .search-bar button {
+            background-color: #ff3399;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #ff66b2;
+        }
+        .main-banner {
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            margin-bottom: 40px;
+            height: 900px;
+        }
+        .banner-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('C:/Tugas PKK/Image/3090-wallpaper-2160x1080-r1.png');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+        }
+        .banner-text {
+            position: absolute;
+            top: 40%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 56px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Profil Button */
+        .profile-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-image: url('file:///C:/Tugas%20PKK/Image/Profile-Picture-4.png'); /* Path Absolut */
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .profile-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 40px;
+            align-items: end;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            display: block;
+        }
+
+        .product button {
+            background-color: #ff3399;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .product button:hover {
+            background-color: #ff66b2;
+        }
+        .product h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+        .promo-video {
+            margin: 40px 0;
+            text-align: center;
+        }
+        .view-all {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .view-all-button {
+            display: inline-block;
+            background-color: #ff3399;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .view-all-button:hover {
+            background-color: #ff66b2;
+        }
+
+        /* Fitur tombol bulat untuk menuju profile */
+        .profile-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff3399;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            z-index: 1000;
+            background-image: url('file:///C:/Tugas PKK/Image/Profile-Picture-4.png');
+            background-size: cover;
+            background-position: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .profile-btn:hover {
+            background-color: #ff66b2;
+        }
+
+        footer {
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">KOMPUTERTECH.ID</div>
+        <nav class="nav">
+            <a href="#">Komponen</a>
+            <a href="#">Service</a>
+            <a href="#">Toko Terdekat</a>
+            <a href="#">Akessoris</a>
+            <a href="#">Tentang</a>
+            <a href="#">Penawaran Spesial</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Cari produk...">
+            <button>Cari</button>
+        </div>
+    </header>
+
+    <section class="main-banner">
+        <div class="banner-image"></div>
+        <div class="banner-text">Tersedia Nvidia RTX 3090</div>
+    </section>
+
+    <section class="products">
+        <div class="product">
+            <img src="C:/Tugas PKK/Image/RTX3050-GI-EA-1.png" alt="RTX 3050">
+            <button>Beli</button>
+            <h3>RTX 3050</h3>
+        </div>
+        <div class="product">
+            <img src="C:/Tugas PKK/Image/rtx3060-gi-wf-12g-1.png" alt="RTX 3060">
+            <button>Beli</button>
+            <h3>RTX 3060</h3>
+        </div>
+        <div class="product">
+            <img src="C:/Tugas PKK/Image/rtx3070ti-gi-goc-1__16634.png" alt="RTX 3070ti">
+            <button>Beli</button>
+            <h3>RTX 3070ti</h3>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="product">
+            <img src="C:/Tugas PKK/Image/RX6600-GI-EA-2__34796.png" alt="RX 6600">
+            <button>Beli</button>
+            <h3>RX 6600</h3>
+        </div>
+        <div class="product">
+            <img src="C:/Tugas PKK/Image/RX7600-GI-GOC-1.png" alt="RX 7600">
+            <button>Beli</button>
+            <h3>RX 7600</h3>
+        </div>
+        <div class="product">
+            <img src="C:/Tugas PKK/Image/rx7800xt-gi-goc-1.png" alt="RX 7800 XT">
+            <button>Beli</button>
+            <h3>RX 7800 XT</h3>
+        </div>
+    </section>
+
+    <section class="view-all">
+        <a href="#" class="view-all-button">Lihat Semua Produk</a>
+    </section>
+
+    <section class="products">
+        <div class="product">
+            <img src="C:/Tugas PKK/Image/CM-CMP-520-1-750x750.png" alt="CM CMP 520">
+            <button>Beli</button>
+            <h3>CM CMP 520</h3>
+        </div>
+        <div class="product">
+            <img src="C:/Tugas PKK/Image/corsair-4000d-air-bk-1__86284-750x750.png" alt="Corsair 4000D Air">
+            <button>Beli</button>
+            <h3>Corsair 4000D Air</h3>
+        </div>
+        <div class="product">
+            <img src="C:/Tugas PKK/Image/GIGABYTE-C301-GLASS-WHITE-01-750x750.png" alt="Gigabyte C301 Glass White">
+            <button>Beli</button>
+            <h3>Gigabyte C301 Glass White</h3>
+        </div>
+    </section>
+
+    <section class="view-all">
+        <a href="#" class="view-all-button">Lihat Semua Produk</a>
+    </section>
+
+    <footer>
+        &copy; (Training) TKJ C Perkasa.
+    </footer>
+
+    <!-- Pop-up Profile Button -->
+    <button class="profile-btn" onclick="window.location.href='file:///C:/Tugas%20PKK/Coding_Profile.html';">
+    </button>
+    
+
+    <script>
+        let prevScrollPos = window.pageYOffset;
+        const header = document.querySelector('header');
+    
+        window.addEventListener('scroll', () => {
+            const currentScrollPos = window.pageYOffset;
+    
+            if (prevScrollPos > currentScrollPos) {
+                header.style.top = '0'; // Tampilkan header
+            } else {
+                header.style.top = '-100px'; // Sembunyikan header
+            }
+    
+            prevScrollPos = currentScrollPos;
+        });
+    </script>
+</body>
+</html>

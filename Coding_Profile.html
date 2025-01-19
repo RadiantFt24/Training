@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .profile-container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+        }
+
+        .profile-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-group .gender-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-group .gender-options label {
+            font-weight: normal;
+        }
+
+        .profile-picture {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .profile-picture img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+        }
+
+        .profile-picture button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ff3399;
+            color: white;
+            cursor: pointer;
+        }
+
+        .profile-picture button:hover {
+            background-color: #df388b;
+        }
+
+        .save-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ff3399;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .save-btn:hover {
+            background-color: #df388b;
+        }
+
+        .back-btn {
+            display: block;
+            width: 380px;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #ff3399;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: #df388b;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <h2>Profil Saya</h2>
+    <div class="profile-picture">
+        <img src="C:\Tugas PKK\Image/Profile-Picture-4.png" alt="Profile Picture">
+        <button>Pilih Gambar</button>
+    </div>
+    <form>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="name">Nama</label>
+            <input type="text" id="name" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="phone">Nomor Telepon</label>
+            <input type="text" id="phone" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="store-name">Alamat</label>
+            <input type="text" id="store-name" placeholder="">
+        </div>
+        <div class="form-group">
+            <label>Jenis Kelamin</label>
+            <div class="gender-options">
+                <label><input type="radio" name="gender" value="male"> Laki-laki</label>
+                <label><input type="radio" name="gender" value="female"> Perempuan</label>
+                <label><input type="radio" name="gender" value="other"> Lainnya</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="birthdate">Tanggal Lahir</label>
+            <input type="text" id="birthdate" placeholder="" disabled>
+            <p class="note">Informasi tidak akan disimpan karena hanya untuk latihan.</p>
+        </div>
+        <button type="submit" class="save-btn">Simpan</button>
+    </form>
+    <a href="C:/Tugas PKK/Coding_Web.html" class="back-btn">Kembali</a>
+</div>
+
+</body>
+</html>
